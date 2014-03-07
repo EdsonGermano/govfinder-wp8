@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="POSH.Socrata.ViewModel" Label="POSH.Socrata.ViewModel" Category="Project" />
+    <Node Id="Microsoft.Bcl 1.0.19" Label="Microsoft.Bcl 1.0.19" Category="Package" />
+    <Node Id="Microsoft.Bcl.Build 1.0.10" Label="Microsoft.Bcl.Build 1.0.10" Category="Package" />
+    <Node Id="POSH.Socrata.WP8" Label="POSH.Socrata.WP8" Category="Project" />
+    <Node Id="Newtonsoft.Json 5.0.6" Label="Newtonsoft.Json 5.0.6" Category="Package" />
+    <Node Id="WPtoolkit 4.2013.08.16" Label="WPtoolkit 4.2013.08.16" Category="Package" />
+  </Nodes>
+  <Links>
+    <Link Source="Microsoft.Bcl 1.0.19" Target="Microsoft.Bcl.Build 1.0.10" Category="Package Dependency" />
+    <Link Source="POSH.Socrata.ViewModel" Target="Microsoft.Bcl 1.0.19" Category="Installed Package" />
+    <Link Source="POSH.Socrata.ViewModel" Target="Microsoft.Bcl.Build 1.0.10" Category="Installed Package" />
+    <Link Source="POSH.Socrata.WP8" Target="Newtonsoft.Json 5.0.6" Category="Installed Package" />
+    <Link Source="POSH.Socrata.WP8" Target="WPtoolkit 4.2013.08.16" Category="Installed Package" />
+  </Links>
+  <Categories>
+    <Category Id="Project" />
+    <Category Id="Package" />
+  </Categories>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="Project" ValueLabel="True">
+      <Condition Expression="HasCategory('Project')" />
+      <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Link" GroupLabel="Package Dependency" ValueLabel="True">
+      <Condition Expression="HasCategory('Package Dependency')" />
+      <Setter Property="Background" Value="Yellow" />
+    </Style>
+  </Styles>
+</DirectedGraph>

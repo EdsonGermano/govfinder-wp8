@@ -1,0 +1,113 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="POSH.Socrata.WP8.Views.CityCategoryDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    xmlns:tool="clr-namespace:Microsoft.Phone.Maps.Toolkit;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:converter="clr-namespace:POSH.Socrata.WP8.ConverterClasses"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+    <phone:PhoneApplicationPage.Resources>
+        <converter:GeoCoordinateConverter x:Key="GeoCoordinateConverter" />
+        <converter:IsIndeterminateToVisibilityConverter x:Key="IsIndeterminateToVisibilityConverter" />
+    </phone:PhoneApplicationPage.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <!--LayoutRoot is the root grid where all page content is placed-->
+        <Grid x:Name="LayoutRoot" Background="#2E2925">
+
+            <!--ContentPanel - place additional content here-->
+            <Grid x:Name="ContentPanel" Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="110" />
+                    <RowDefinition Height="300" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!--Nokia Map-->
+                <my:Map x:Name="nokiaMap" ZoomLevel="10" DoubleTap="nokiaMap_DoubleTap">
+                    <tool:MapExtensions.Children>
+                        <tool:MapItemsControl>
+                            <tool:MapItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <tool:Pushpin x:Name="mapPushpin" GeoCoordinate="{Binding Coordinate,Converter={StaticResource GeoCoordinateConverter}}" Content="{Binding IndexNo}" Foreground="White" Background="#FFF30D0D" />
+                                </DataTemplate>
+                            </tool:MapItemsControl.ItemTemplate>
+                        </tool:MapItemsControl>
+                    </tool:MapExtensions.Children>
+                </my:Map>
+
+                <!--ProgressBar-->
+                <ProgressBar x:Name="progressBar" IsIndeterminate="True" Grid.Row="1" />
+
+                <!--Image-->
+                <Border Grid.Row="1" BorderBrush="Black" BorderThickness="1">
+                    <Image Source="{Binding BackgroundImage}" Stretch="Fill" />
+                </Border>
+                <Border Grid.Row="1" Background="Black" Opacity="0.5" Height="50" VerticalAlignment="Bottom">
+                    <TextBlock Text="{Binding Name}" VerticalAlignment="Center" TextTrimming="WordEllipsis" FontSize="24" FontFamily="Segoe WP" Margin="5" />
+                </Border>
+
+                <Border Grid.Row="2" Background="#766F6D">
+                    <TextBlock TextAlignment="Right" Text="{Binding SubTitle}" VerticalAlignment="Center" FontFamily="Segoe WP" Margin="5" />
+                </Border>
+
+                <!--bottom part-->
+                <Grid x:Name="grdDetails" Grid.Row="3" Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="7*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--Distance details-->
+                    <Rectangle Fill="Gray" Grid.RowSpan="2" Height="30" Width="30" HorizontalAlignment="Left">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/Assets/distance.png" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Grid.Column="1" Text="Distance" FontFamily="Segoe WP" VerticalAlignment="Center" />
+                    <TextBlock x:Name="tbkDistance" Grid.Column="1" Grid.Row="1" FontFamily="Segoe WP" Text="{Binding Distance}" Foreground="Red" VerticalAlignment="Top" HorizontalAlignment="Left" Tap="tbkDistance_Tap" />
+
+                    <!--Phone details-->
+                    <Rectangle Fill="Gray" Grid.Row="3" Grid.RowSpan="2" Height="30" Width="30" HorizontalAlignment="Left">
+                        <Rectangle.OpacityMask>
+                            <ImageBrush ImageSource="/Assets/Phone.png" />
+                        </Rectangle.OpacityMask>
+                    </Rectangle>
+                    <TextBlock Grid.Row="3" Grid.Column="1" FontFamily="Segoe WP" Text="Phone" VerticalAlignment="Center" />
+                    <HyperlinkButton x:Name="tbkPhone" Margin="-8 0 0 0" Grid.Column="1" Grid.Row="4" FontSize="20" FontFamily="Segoe WP" Content="{Binding Phone}" HorizontalAlignment="Left" Foreground="Red" Tag="{Binding Name}" VerticalAlignment="Center" Tap="tbkPhone_Tap" />
+                    <HyperlinkButton Visibility="{Binding ElementName=progressBar,Path=IsIndeterminate,Converter={StaticResource IsIndeterminateToVisibilityConverter}}" Grid.Row="6" Content="{Binding Comments}" Grid.ColumnSpan="2" FontFamily="Segoe WP" HorizontalAlignment="Left" Foreground="White" Tap="btnAddComents_Tap" />
+                    <Button x:Name="btnAddComents" Visibility="{Binding ElementName=progressBar,Path=IsIndeterminate,Converter={StaticResource IsIndeterminateToVisibilityConverter}}" Tag="{Binding IndexNo}" Grid.Row="6" Grid.Column="1" Height="50" Width="50" Style="{StaticResource RoundButtonStyle1}" HorizontalAlignment="Right" Margin="0 0 10 0" Tap="btnAddComents_Tap">
+                        <Button.Background>
+                            <ImageBrush ImageSource="/Toolkit.Content/ApplicationBar.Add.png" />
+                        </Button.Background>
+                    </Button>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ScrollViewer>
+    <!--Sample code showing usage of ApplicationBar-->
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True" x:Name="appBarPanel">
+            <shell:ApplicationBarIconButton x:Name="appbar_pin" IconUri="/Assets/Pin.png" Text="pin" Click="appbar_pin_Click" />
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

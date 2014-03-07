@@ -1,0 +1,59 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="POSH.Socrata.WP8.Views.PrivacyPolicy"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+   xmlns:control="clr-namespace:POSH.Socrata.WP8.Class"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+    <phone:PhoneApplicationPage.Resources>
+        <!--Scrollable text box style since simple text box can't afford more than 2048 characters-->
+        <Style TargetType="control:ScrollableTextBlock">
+            <Setter Property="Foreground" Value="{StaticResource PhoneForegroundBrush}" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="FontSize" Value="{StaticResource PhoneFontSizeMedium}" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="10 0 10 0" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="control:ScrollableTextBlock">
+                        <ScrollViewer x:Name="ScrollViewer" Foreground="{TemplateBinding Foreground}"
+                                  Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                                  BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}"  VerticalScrollBarVisibility="Visible">
+                            <StackPanel Orientation="Vertical" x:Name="StackPanel" />
+                        </ScrollViewer>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </phone:PhoneApplicationPage.Resources>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />           
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel Grid.Row="0" Background="#766F6D">
+            <TextBlock Text="Gov Finder" Margin="12 17 0 0" Style="{StaticResource PhoneTextNormalStyle}" Foreground="Black" />
+            <TextBlock Text="Privacy Policy" Margin="21,-7,0,0" FontSize="40" />
+        </StackPanel>
+        
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="24,5,12,0">
+            <control:ScrollableTextBlock x:Name="tbkPrivacyPolicy" FontSize="20"  VerticalAlignment="Top" HorizontalAlignment="Left" Loaded="tbkPrivacyPolicy_Loaded"/>
+            <TextBlock x:Name="tbkLoadingData" Text="Loading....." VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+        
+    </Grid>
+</phone:PhoneApplicationPage>

@@ -1,0 +1,5 @@
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\POSH.Socrata.Entity\bin\Debug\POSH.Socrata.Entity.dll
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\POSH.Socrata.Entity\bin\Debug\POSH.Socrata.Entity.pdb
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\POSH.Socrata.Entity\obj\Debug\POSH.Socrata.Entity.dll
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\POSH.Socrata.Entity\obj\Debug\POSH.Socrata.Entity.pdb
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\POSH.Socrata.Entity\obj\Debug\POSH.Socrata.Entity.csprojResolveAssemblyReference.cache

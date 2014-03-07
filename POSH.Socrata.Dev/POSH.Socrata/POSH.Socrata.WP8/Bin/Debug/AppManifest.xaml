@@ -1,0 +1,22 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="POSH.Socrata.WP8" EntryPointType="POSH.Socrata.WP8.App" RuntimeVersion="4.7.50308.0">
+  <Deployment.Parts>
+    <AssemblyPart x:Name="POSH.Socrata.WP8" Source="POSH.Socrata.WP8.dll" />
+    <AssemblyPart x:Name="JeffWilcox.PhoneThemeManager" Source="JeffWilcox.PhoneThemeManager.dll" />
+    <AssemblyPart x:Name="Microsoft.Live.Controls" Source="Microsoft.Live.Controls.dll" />
+    <AssemblyPart x:Name="Microsoft.Live" Source="Microsoft.Live.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls" Source="Microsoft.Phone.Controls.dll" />
+    <AssemblyPart x:Name="Microsoft.Phone.Controls.Toolkit" Source="Microsoft.Phone.Controls.Toolkit.dll" />
+    <AssemblyPart x:Name="Microsoft.Threading.Tasks" Source="Microsoft.Threading.Tasks.dll" />
+    <AssemblyPart x:Name="Microsoft.Threading.Tasks.Extensions" Source="Microsoft.Threading.Tasks.Extensions.dll" />
+    <AssemblyPart x:Name="Microsoft.Threading.Tasks.Extensions.Phone" Source="Microsoft.Threading.Tasks.Extensions.Phone.dll" />
+    <AssemblyPart x:Name="Newtonsoft.Json" Source="Newtonsoft.Json.dll" />
+    <AssemblyPart x:Name="PCLStorage.Abstractions" Source="PCLStorage.Abstractions.dll" />
+    <AssemblyPart x:Name="PCLStorage" Source="PCLStorage.dll" />
+    <AssemblyPart x:Name="POSH.Socrata.BackgroundTask" Source="POSH.Socrata.BackgroundTask.dll" />
+    <AssemblyPart x:Name="POSH.Socrata.Entity" Source="POSH.Socrata.Entity.dll" />
+    <AssemblyPart x:Name="POSH.Socrata.ViewModel" Source="POSH.Socrata.ViewModel.dll" />
+    <AssemblyPart x:Name="System.Net.Http" Source="System.Net.Http.dll" />
+    <AssemblyPart x:Name="POSH.Socrata.PclStorage" Source="POSH.Socrata.PclStorage.dll" />
+    <AssemblyPart x:Name="System.Net.Http.Primitives" Source="System.Net.Http.Primitives.dll" />
+  </Deployment.Parts>
+</Deployment>

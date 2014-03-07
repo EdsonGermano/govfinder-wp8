@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="Posh.Socrata.ServiceRole" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="3" osVersion="*" schemaVersion="2013-10.2.2">
+  <Role name="Posh.Socrata.Service">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=socratacomments;AccountKey=CPUzxusfkGMWv+3cStItzMOjJna7Qyugz/dQDsSzxCg/1oFMaxcWtp7qsC5wb2guaDaSjqubNZ5Qw8f18lV6MQ==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=socratacomments;AccountKey=CPUzxusfkGMWv+3cStItzMOjJna7Qyugz/dQDsSzxCg/1oFMaxcWtp7qsC5wb2guaDaSjqubNZ5Qw8f18lV6MQ==" />
+    </ConfigurationSettings>
+    <Certificates>
+    </Certificates>
+  </Role>
+  <Role name="Posh.Socrata.WorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=socratacomments;AccountKey=CPUzxusfkGMWv+3cStItzMOjJna7Qyugz/dQDsSzxCg/1oFMaxcWtp7qsC5wb2guaDaSjqubNZ5Qw8f18lV6MQ==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=socratacomments;AccountKey=CPUzxusfkGMWv+3cStItzMOjJna7Qyugz/dQDsSzxCg/1oFMaxcWtp7qsC5wb2guaDaSjqubNZ5Qw8f18lV6MQ==" />
+    </ConfigurationSettings>
+  </Role>
+</ServiceConfiguration>

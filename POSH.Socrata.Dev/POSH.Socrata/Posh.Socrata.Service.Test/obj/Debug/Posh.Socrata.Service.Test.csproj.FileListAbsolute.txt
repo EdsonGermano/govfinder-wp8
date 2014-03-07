@@ -1,0 +1,1 @@
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\Posh.Socrata.Service.Test\obj\Debug\Posh.Socrata.Service.Test.csprojResolveAssemblyReference.cache

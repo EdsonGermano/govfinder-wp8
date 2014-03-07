@@ -1,0 +1,2 @@
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\Posh.Socrata.ServiceRole\bin\Debug\ServiceConfiguration.cscfg
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\Posh.Socrata.ServiceRole\bin\Debug\ServiceDefinition.csdef

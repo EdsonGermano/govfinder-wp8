@@ -1,0 +1,4 @@
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\POSH.Socrata.Entity\bin\Release\POSH.Socrata.Entity.dll
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\POSH.Socrata.Entity\bin\Release\POSH.Socrata.Entity.pdb
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\POSH.Socrata.Entity\obj\Release\POSH.Socrata.Entity.dll
+C:\Posh_TFS\POSH.Socrata.WP8\POSH.Socrata.Dev\POSH.Socrata\POSH.Socrata.Entity\obj\Release\POSH.Socrata.Entity.pdb
